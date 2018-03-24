@@ -9,27 +9,24 @@
                minlength="4"
         >
     </label>
-    <div>
-        <ul>
-            <li>
-                {{ queryRef.errors | json }}
-            </li>
-            <li>
-                {{ queryRef.invalid | json }}
-            </li>
-        </ul>
-    </div>
-
 
     <button class="button is-primary" [disabled]="queryRef.invalid" type="submit" (click)=search()>search</button>
 </form>
+
+<p class="subtitle">search results</p>
+<div class="columns is-multiline">
+    <st-show *ngFor="let show of shows" [show]="show" class="column is-one-quarter">
+        tu można wstawić kręcioła
+    </st-show>
+</div>
+
+<pre>{{ shows | json }}</pre>
 <!--
 EMMET:
 nav.menu>ul>li*5>lorem2
 
-kliknij TAB
+kliknij TAB i dostaniesz
 
-dostaniesz
 <nav class="menu">
     <ul>
         <li>Lorem ipsum.</li>
