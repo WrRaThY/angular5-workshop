@@ -15,12 +15,14 @@
 
 <p class="subtitle">search results</p>
 <div class="columns is-multiline">
-    <st-show *ngFor="let show of shows" [show]="show" class="column is-one-quarter">
+    <st-show *ngFor="let show of shows$ | async" [show]="show" class="column is-one-quarter">
         tu można wstawić kręcioła
     </st-show>
 </div>
 
-<pre>{{ shows | json }}</pre>
+<h2 class="subtitle">Results: {{ timer$ | async}}</h2>
+
+<!--<pre>{{ shows | json }}</pre>-->
 <!--
 EMMET:
 nav.menu>ul>li*5>lorem2

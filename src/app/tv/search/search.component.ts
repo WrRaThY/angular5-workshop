@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MazeService} from '../maze.service';
 import {Show} from '../tv.models';
+import {Observable} from 'rxjs/Observable';
+import {timer} from 'rxjs/observable/timer';
 
 @Component({
     selector: 'st-search',
@@ -10,9 +12,11 @@ import {Show} from '../tv.models';
 })
 export class SearchComponent implements OnInit {
     searchQuery = 'flash';
-    shows: Show[] = [];
+    shows$: Observable<Show[]>;
+    timer$: Observable<any>;
 
     constructor(private mazeService: MazeService) {
+        this.timer$ = timer(0, 1000);
     }
 
     ngOnInit() {
@@ -20,11 +24,9 @@ export class SearchComponent implements OnInit {
     }
 
     search() {
-        this.shows = [];
         console.log('search query: ' + this.searchQuery);
-        this.mazeService.searchShows(this.searchQuery).subscribe(
-            shows => this.shows = shows
-        );
+        this.shows$ = this.mazeService.searchShows(this.searchQuery);
+        /*.subscribe(shows => this.shows = shows);*/
     }
 
 }
