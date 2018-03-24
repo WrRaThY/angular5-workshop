@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-    searchQuery = 'fff';
+    searchQuery = '';
 
     constructor() {
     }
@@ -14,12 +14,8 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
     }
 
-    search(query: string) {
-        console.log('search query: ' + query);
-    }
-
-    search2() {
-        console.log('search query 2: ' + this.searchQuery);
+    search() {
+        console.log('search query: ' + this.searchQuery);
     }
 
 }

@@ -1,17 +1,27 @@
-<label>
-    write something
-    <input #searchInput type="search" class="input">
-</label>
-
-<button class="button is-primary" (click)=search(searchInput.value)>search</button>
-<p style="height: 15px"></p>
 <form>
-    <label>
+    <label style="margin-top: 10px">
         {{ searchQuery }}
-        <input name="searchQuery" [(ngModel)]="searchQuery" type="search" class="input">
+        <input name="searchQuery" [(ngModel)]="searchQuery"
+               #queryRef="ngModel"
+               type="search"
+               class="input"
+               required
+               minlength="4"
+        >
     </label>
+    <div>
+        <ul>
+            <li>
+                {{ queryRef.errors | json }}
+            </li>
+            <li>
+                {{ queryRef.invalid | json }}
+            </li>
+        </ul>
+    </div>
 
-    <button class="button is-primary" (click)=search2()>search</button>
+
+    <button class="button is-primary" [disabled]="queryRef.invalid" type="submit" (click)=search()>search</button>
 </form>
 <!--
 EMMET:
