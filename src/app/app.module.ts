@@ -8,6 +8,7 @@ import {HomeComponent} from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { SearchComponent } from './tv/search/search.component';
 import { Page404Component } from './page404/page404.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { Page404Component } from './page404/page404.component';
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule
     ],
     providers: [],

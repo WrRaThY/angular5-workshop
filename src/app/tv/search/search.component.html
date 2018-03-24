@@ -4,7 +4,15 @@
 </label>
 
 <button class="button is-primary" (click)=search(searchInput.value)>search</button>
+<p style="height: 15px"></p>
+<form>
+    <label>
+        {{ searchQuery }}
+        <input name="searchQuery" [(ngModel)]="searchQuery" type="search" class="input">
+    </label>
 
+    <button class="button is-primary" (click)=search2()>search</button>
+</form>
 <!--
 EMMET:
 nav.menu>ul>li*5>lorem2
