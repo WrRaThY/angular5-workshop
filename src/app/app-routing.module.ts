@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './tv/search/search.component';
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
+import {Page404Component} from './page404/page404.component';
 
 const routes: Routes = [
     {
@@ -14,6 +15,9 @@ const routes: Routes = [
     }, {
         path: 'contact',
         component: ContactComponent
+    }, {
+        path: '**',
+        component: Page404Component
     }
 ];
 

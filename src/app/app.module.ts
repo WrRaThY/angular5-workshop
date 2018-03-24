@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { SearchComponent } from './tv/search/search.component';
+import { Page404Component } from './page404/page404.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SearchComponent } from './tv/search/search.component';
         AppComponent,
         HomeComponent,
         ContactComponent,
-        SearchComponent
+        SearchComponent,
+        Page404Component
     ],
     imports: [
         BrowserModule,
