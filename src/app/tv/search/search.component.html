@@ -1,3 +1,24 @@
-<p>
-  search works!
-</p>
+<label>
+    write something
+    <input #searchInput type="search" class="input">
+</label>
+
+<button class="button is-primary" (click)=search(searchInput.value)>search</button>
+
+<!--
+EMMET:
+nav.menu>ul>li*5>lorem2
+
+kliknij TAB
+
+dostaniesz
+<nav class="menu">
+    <ul>
+        <li>Lorem ipsum.</li>
+        <li>Iusto, modi.</li>
+        <li>Aut, doloremque.</li>
+        <li>Culpa, excepturi.</li>
+        <li>Quas, veniam!</li>
+    </ul>
+</nav>
+-->
