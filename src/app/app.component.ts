@@ -7,4 +7,13 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
     title = 'IT.Stacja Angular 4 worlshop';
+    timePassed: number;
+
+    handleClick(event: MouseEvent) {
+        this.title += '#' + event.clientX;
+    }
+
+    handleTimePassed(value: number) {
+        this.timePassed = value;
+    }
 }
