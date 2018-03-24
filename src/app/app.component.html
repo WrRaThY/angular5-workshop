@@ -1,12 +1,15 @@
-<h1 (click)=handleClick($event)>Click me!</h1>
-<!-- handlick click events, passing event handler -->
+<nav class="navbar is-dark">
+    <div class="container">
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item is-tab" routerLink="/">Home</a>
+                <a class="navbar-item is-tab" routerLink="/tv">TV Shows</a>
+                <a class="navbar-item is-tab" routerLink="/contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
-<st-home input="Stefan"></st-home> <!-- string -->
-<st-home input="Stefan.toUpperCase()"></st-home> <!-- string -->
-<st-home [input]="title"></st-home> <!-- variable from current component -->
-<st-home [input]="title.toUpperCase()"></st-home> <!-- variable from current component + function call -->
-<st-home [input]="title.toUpperCase()" (timePassed)="handleTimePassed($event)"></st-home> <!-- variable from current component + function call. without quotes! -->
-
-<h4>time passed: {{ timePassed}}</h4>
-
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
